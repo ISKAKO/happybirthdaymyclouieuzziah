@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Birthday Cake</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome-screen" class="screen">
+        <h1>Happy Birthday, Baby! Are you ready to celebrate?</h1>
+        <button id="celebrateButton">Yes baby ko, I love you.</button>
+        <button id="wrongChoiceButton">ihh</button>
+        <div id="error-message" style="display: none;">
+            <span id="angry-emoji">😠</span>
+            <p>That is not the right answer!</p>
+        </div>
+    </div>
+    <div id="cake-screen" class="screen" style="display: none;">
+        <div class="container">
+            <div class="cake">
+                <div class="tiara"></div>
+                <div class="candles">
+                    <div class="candle" id="candle1"></div>
+                    <div class="candle" id="candle2"></div>
+                    <div class="candle" id="candle3"></div>
+                </div>
+                <div class="cake-body"></div>
+            </div>
+            <p class="blow-text">Blow into the microphone, bebe</p>
+            <h1>Happy Birthday, My Pretty Girlfriend! I love you. Thank you for everything.</h1>
+            <audio id="birthdaySong" src="https://pixabay.com/sound-effects/happy-birthday-guitar-11795/" preload="auto"></audio>
+            <div id="confetti"></div>
+        </div>
+    </div>
+    <div id="good-girl-screen" class="screen" style="display: none;">
+        <h1>GOOD GIRLL!!!</h1>
+        <img src="https://example.com/path-to-your-happy-meme.jpg" alt="Happy Meme" />
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+/* Import the Great Vibes font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+    font-family: 'Great Vibes', cursive; /* Royalty-like font */
+    text-align: center;
+    background-color: pink;
+    color: white;
+    overflow: hidden;
+    margin: 0;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#welcome-screen h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#celebrateButton, #wrongChoiceButton {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    margin: 10px;
+}
+
+#wrongChoiceButton {
+    background-color: #ff4d4d; /* Red color for incorrect choice */
+}
+
+#error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#error-message #angry-emoji {
+    font-size: 5em;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cake {
+    position: relative;
+    width: 400px; /* Adjust cake size */
+    height: 300px; /* Height for single layer */
+    background-color: #f8c8dc;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 5px solid #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.tiara {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, #ffb3e6, #ff80ab);
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 2; /* Ensure tiara is on top of cake */
+}
+
+.candles {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 1; /* Ensure candles are on top of cake */
+}
+
+.candle {
+    width: 20px; /* Candle size */
+    height: 80px;
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px; /* Flame size */
+    height: 20px;
+    background-color: #f2c94c;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.cake-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.blow-text {
+    font-size: 1.2em; /* Smaller text for the microphone instruction */
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 3em; /* Larger text for birthday message */
+    margin: 20px 0;
+}
+
+#confetti {
+    position: fixed; /* Full-screen confetti */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: fall 5s linear infinite; /* Extended animation time */
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#good-girl-screen h1 {
+    font-size: 4em;
+}
+
+#good-girl-screen img {
+    width: 80%; /* Adjust size of the meme */
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .cake {
+        width: 300px; /* Smaller cake size for mobile */
+        height: 200px;
+    }
+
+    .tiara {
+        width: 80px;
+        height: 30px;
+    }
+
+    .cake-body {
+        width: 90%;
+    }
+
+    #celebrateButton, #wrongChoiceButton {
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+
+    .blow-text {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+.candle.blown-out::before {
+    background-color: transparent; /* Remove flame color */
+    box-shadow: none; /* Remove flame glow */
+}
+
